@@ -1,25 +1,18 @@
+# --- Task 0: Book Class ---
 from book_class import Book
 
-def main():
-    my_book = Book("1984", "George Orwell", 1949)
+print("=== Testing Book Class ===")
+book = Book("1984", "George Orwell", 1949)
+print(book)
+print(repr(book))
+del book
 
-    print(my_book)  # Expected to use __str__
+# --- Task 1: Library System ---
+from library_system import Book as BaseBook, EBook, PrintBook, Library
 
-    print(repr(my_book))  # Expected to use __repr__
-
-    del my_book
-
-    my_library = Library()
-
-    classic_book = Book("Pride and Prejudice", "Jane Austen")
-    digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
-    paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
-
-    my_library.add_book(classic_book)
-    my_library.add_book(digital_novel)
-    my_library.add_book(paper_novel)
-
-    my_library.list_books()
-
-if __name__ == "__main__":
-    main()
+print("\n=== Testing Library System ===")
+library = Library()
+library.add_book(BaseBook("Pride and Prejudice", "Jane Austen"))
+library.add_book(EBook("Snow Crash", "Neal Stephenson", 500))
+library.add_book(PrintBook("The Catcher in the Rye", "J.D. Salinger", 234))
+library.list_books()
