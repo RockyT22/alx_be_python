@@ -30,7 +30,7 @@ def test_library_system():
 
 
 # === Task 2: Polymorphism & Method Overriding ===
-from polymorphism_demo import Shape, Rectangle, Circle
+from polymorphism_demo import Rectangle, Circle
 
 def test_polymorphism():
     print("\n=== Testing Polymorphism ===")
@@ -43,7 +43,21 @@ def test_polymorphism():
         print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
 
 
+# === Task 3: Class Methods & Static Methods ===
+from class_static_methods_demo import Calculator
+
+def test_class_static_methods():
+    print("\n=== Testing Class and Static Methods ===")
+
+    sum_result = Calculator.add(10, 5)
+    print(f"The sum is: {sum_result}")
+
+    product_result = Calculator.multiply(10, 5)
+    print(f"The product is: {product_result}")
+
+
 if __name__ == "__main__":
     test_book_class()
     test_library_system()
     test_polymorphism()
+    test_class_static_methods()
